@@ -6,7 +6,7 @@ The objective is to end up with a Raspberry Pi style boot where the root filesys
 ## One Time BSP Creation
 Avnet has not released an official BSP for this board but it is easy to create.
 
-    petalinux-create --force --type project --template zynqMP --name bspproj
+    petalinux-create --force --type project --template zynq --name bspproj
 
 Now configure the bsp project.
 
@@ -18,28 +18,23 @@ This will bring up a configuration menu.  Make the following changes. These chan
     * Under "Image Packaging Configuration" ->
         "Root filesystem type" ->
             Select "SD Card"
-        "Device Node of SD Device" ->
-            Change to mmcblk1p2
 
     * Under "Subsystem AUTO Hardware Settings" ->
         "Advanced bootable images storage Settings" ->
             "u-boot env partition settings" ->
                 "image storage media" ->
                     Select "primary sd"
-        "SD/SDIO Settings"  -> 
-            "Primary SD/SDIO" ->
-                Select "psu_sd_1"
 
     * Save and exit the configuration menu. Wait for configuration to complete.
 
     cd ..
-    petalinux-package --bsp -p bspproj/ --output uzed.bsp
+    petalinux-package --bsp -p bspproj/ --output picozed.bsp
 
 ## Petalinux Build Project
 
 Create the petalinux project. (Note: the BSP file name changes with version.)
 
-    petalinux-create --force --type project --template zynqMP --source ./uzed.bsp --name proj1
+    petalinux-create --force --type project --template zynq --source ./picozed.bsp --name proj1
 
 Configure the petalinux project with the settings we need to run Ubuntu from the SD card.
 
