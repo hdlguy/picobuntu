@@ -8,10 +8,6 @@ Avnet has not released an official BSP for this board but it is easy to create.
 
     petalinux-create --force --type project --template zynqMP --name bspproj
 
-Now we have to modify the system-user.dtsi device tree file. This tells the linux kernel some things about the Ethernet interface and the SD card. There is a modified version committed to this repository so just copy it over.
-
-    cp ./system-user.dtsi ./bspproj/project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
-
 Now configure the bsp project.
 
     cd bspproj/
