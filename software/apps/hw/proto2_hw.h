@@ -1,0 +1,6 @@
+#define		BASE_ADDRESS		0x40000000
+#define		PROTO_SIZE		0x00100000
+
+#define 	LED_CONTROL		0x00010000  
+
+
