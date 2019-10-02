@@ -50,7 +50,6 @@ All the settings are made in the BSP creation so I run this with the --siilentco
 
 Run another configu menu.
 
-    petalinux-config -c kernel
     petalinux-config --silentconfig -c kernel
 
 ### Build the linux kernel
@@ -61,7 +60,7 @@ It takes a while to run.
 
 ### Create the boot files that u-boot expects.
 
-    petalinux-package --force --boot --fsbl images/linux/zynqmp_fsbl.elf --u-boot images/linux/u-boot.elf
+    petalinux-package --force --boot --fsbl images/linux/zynq_fsbl.elf --u-boot images/linux/u-boot.elf
 
 BOOT.BIN contains the ATF, PMUFW, FSBL, U-Boot.
 image.ub contains the device tree and Linux kernel.
