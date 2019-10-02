@@ -19,7 +19,8 @@ module top (
       inout logic [53:0]FIXED_IO_mio,
       inout vFIXED_IO_ps_clk,
       inout logic FIXED_IO_ps_porb,
-      inout logic FIXED_IO_ps_srstb
+      inout logic FIXED_IO_ps_srstb,
+      output logic [3:0] led
   );
 
   system system_i
@@ -43,7 +44,8 @@ module top (
         .FIXED_IO_mio(FIXED_IO_mio),
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
-        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb)
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),        
+        .led_tri_o(led)
     );
     
 endmodule
