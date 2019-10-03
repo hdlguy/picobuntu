@@ -11,7 +11,7 @@ Avnet has not released an official BSP for this board but it is easy to create.
 Now configure the bsp project.
 
     cd bspproj/
-    petalinux-config --get-hw-description=../../../implement/results/
+    petalinux-config --get-hw-description=../../../fpga/implement/results/
 
 This will bring up a configuration menu.  Make the following changes. These changes will automatically be incorporated into the Petalinux build based on the BSP.
 
@@ -40,7 +40,7 @@ Configure the petalinux project with the settings we need to run Ubuntu from the
 
     cd proj1
 
-    petalinux-config --silentconfig --get-hw-description=../../../implement/results/
+    petalinux-config --silentconfig --get-hw-description=../../../fpga/implement/results/
 
 All the settings are made in the BSP creation so I run this with the --siilentconfig option. Run without that option if you want the GUI.
 
@@ -132,13 +132,15 @@ The serial  terminal is limiting so I like to ssh into the board. First, find th
 
 Configure the PL side of the Zynq with an FPGA design. This has changed with this newer Linux on Zynq+.
 
-    Modify your FPGA build script to produce a .bin file in addition to the normal .bit file. The FPGA example in this project has that command in compile.tcl.
+    The FPGA build scripts in this repo create a top.bit.bin file.  Linux requires the bin format for runtime PL configuration.
 
     Go to your terminal on the Zynq+ Linux command line.
 
     Do a "git clone" or "git pull" to get the latest .bin file from the FPGA side of the repo.
 
-    Copy .../fpga/implement/results/top.bit.bin to /lib/firmware. I think you need to do this as sudo. You may have to create /lib/firmware and chmod to 777.
+        git clone https://github.com/hdlguy/picobuntu.git
+
+    Copy .../fpga/implement/results/top.bit.bin to /lib/firmware. You may have to create /lib/firmware and chmod to 777.
 
     Change to root with "sudo su".
 
