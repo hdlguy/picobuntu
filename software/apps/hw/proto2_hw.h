@@ -3,4 +3,7 @@
 
 #define 	LED_CONTROL		0x00010000  
 
+#define     	TEST_BRAM_OFFSET    	0x00000000
+#define     	TEST_BRAM_SIZE      	0x00002000 // 8KB
+
 
