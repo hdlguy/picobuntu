@@ -1,5 +1,5 @@
 # Petalinux Development Cheatsheet
-This file contains instructions to get Petalinux running on the Ultrazed SOM installed on the Avnet IO Carrier card. Avnet does not publish a current BSP for this board so first we create a custom BSP, then build Petalinux for it.
+This file contains instructions to get Petalinux running on the PicoZed SOM installed on the Avnet FMC Carrier card. Avnet does not publish a current BSP for this board so first we create a custom BSP, then build Petalinux for it.
 
 The objective is to end up with a Raspberry Pi style boot where the root filesystem is stored, non-volatile, on a SD card ext4 partition.  This kind of system is full Ubuntu Desttop Linux. Linux commands are independent excutables, not busybox. The apt package manager can be used to install applications such as git, python3, octave, apache, etc.  Software can be be checked out, edited, compiled, debugged and re-commited from an ssh shell on the Zynq board.
 
