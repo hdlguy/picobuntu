@@ -60,7 +60,7 @@ It takes a while to run.
 
 ### Create the boot files that u-boot expects.
 
-    petalinux-package --force --boot --fsbl images/linux/zynq_fsbl.elf --u-boot images/linux/u-boot.elf
+    petalinux-package --force --boot --fsbl images/linux/zynq_fsbl.elf --u-boot images/linux/u-boot.elf --fpga ../../../fpga/implement/results/top.bit
 
 BOOT.BIN contains the ATF, PMUFW, FSBL, U-Boot.
 image.ub contains the device tree and Linux kernel.
