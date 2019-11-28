@@ -13,7 +13,7 @@ load_features ipintegrator
 #set_property  ip_repo_paths ../../hls/cholesky_inverse/csynth/solution1/impl/ip/ [current_project]
 update_ip_catalog
 
-#read_ip ../source/output_ila/output_ila.xci
+read_ip ../source/spi_ila/spi_ila.xci
 upgrade_ip -quiet  [get_ips *]
 generate_target {all} [get_ips *]
 
