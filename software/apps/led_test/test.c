@@ -26,7 +26,10 @@ int main(int argc,char** argv)
     }
     fprintf(stdout,"phy_addr 0x%08x with size 0x%08x to viraddr 0x%p.\n",pcie_bar0_addr,pcie_bar0_size, pcie_addr);
 
-    write_reg(pcie_addr, LED_CONTROL, 0x02);
+    for (int i=0; i<16; i++) {
+        write_reg(pcie_addr, LED_CONTROL, i);
+        usleep(250000);
+    }
 
     munmap(pcie_addr,pcie_bar0_size);
 
