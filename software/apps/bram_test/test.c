@@ -26,6 +26,7 @@ int main(int argc,char** argv)
     }
     fprintf(stdout,"phy_addr 0x%08x with size 0x%08x to viraddr 0x%p.\n",pcie_bar0_addr,pcie_bar0_size, pcie_addr);
 
+    write_reg(pcie_addr, LED_CONTROL, 0x0a);
 
     uint32_t write_data[TEST_BRAM_SIZE/4], read_data[TEST_BRAM_SIZE/4];
 
